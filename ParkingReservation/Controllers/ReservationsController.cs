@@ -323,6 +323,8 @@ namespace ParkingReservation.Controllers
             this.log.LogTrace("GetAvailableSpacesAsync start");
 
             // We want to get the parking spaces available
+            // Not sure if we want equality on this - I would assume in real life the bookings
+            // will have a date AND a time however for the sake of simplicity use just the dates
             return await this.context.Spaces.Include(s => s.Reservations)
                 .Where(space => space.Reservations.All(res => res.To < from && res.From > to))
                 .ToListAsync();
