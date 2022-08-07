@@ -6,3 +6,4 @@ Allows user to make bookings for given dates (from, to), manage the capacity and
 To do (notes)
 - Refactor to have data access in services/repos
 - Move business logic from controller to model classes
+- Add more tests
